@@ -219,7 +219,7 @@ export default class PersistentNodeCache extends NodeCache {
 
     private appendToFile(fileName: string, data: Buffer): void {
         this.changesSinceLastBackup = true;
-        const flags = fs.constants.O_WRONLY | fs.constants.O_DIRECT | fs.constants.O_APPEND;
+        const flags = fs.constants.O_WRONLY | fs.constants.O_APPEND;
         const mode = 0o666;
 
         if(this.appendFileDescriptor) {
